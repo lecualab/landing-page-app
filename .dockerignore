@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+.angular/
+
+# local builds
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.*.local
+*.log*
+
+# git
+.git

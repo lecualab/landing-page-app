@@ -1,0 +1,16 @@
+/**
+ * This file centralizes all the fixes for Angular Material UI issues with TailwindCSS
+ */
+
+/**
+ * INFO: Input with appearence `outline` shows weird border
+ * @see https://github.com/tailwindlabs/tailwindcss/discussions/9993
+ */
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+  .mdc-notched-outline__notch {
+  border-right-style: hidden;
+}
+
+.mat-mdc-input-element {
+  box-shadow: none !important;
+}
