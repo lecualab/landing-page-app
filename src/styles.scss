@@ -1,0 +1,13 @@
+@use 'styles/index';
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
