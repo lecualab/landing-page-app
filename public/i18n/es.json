@@ -1,4 +1,13 @@
 {
+  "home": {
+    "hero": {
+      "title": {
+        "base": "Laboratorio de",
+        "solutions": "branding | diseño corporativo | diseño editorial | diseño gráfico"
+      },
+      "action": "Conoce más"
+    }
+  },
   "footer": {
     "action": "Contáctanos",
     "allRightsReserved": "Todos los derechos reservados"
