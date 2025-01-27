@@ -1,4 +1,14 @@
 {
+  "home": {
+    "hero": {
+      "title": {
+        "base": "Laboratorio de",
+        "solutions": "branding | diseño corporativo | diseño editorial | diseño gráfico",
+        "ariaLabel": "Laboratorio de branding, diseño corporativo, diseño editorial y diseño gráfico"
+      },
+      "action": "Conoce más"
+    }
+  },
   "footer": {
     "action": "Contáctanos",
     "allRightsReserved": "Todos los derechos reservados"
