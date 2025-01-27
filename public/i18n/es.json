@@ -1,4 +1,9 @@
 {
+  "home": {
+    "hero": {
+      "action": "Conoce más"
+    }
+  },
   "footer": {
     "action": "Contáctanos",
     "allRightsReserved": "Todos los derechos reservados"
