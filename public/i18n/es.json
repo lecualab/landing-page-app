@@ -1,4 +1,10 @@
 {
+  "home": {
+    "hero": {
+      "title": "Laboratorio de branding, diseño corporativo y editorial",
+      "action": "Conoce más"
+    }
+  },
   "footer": {
     "action": "Contáctanos",
     "allRightsReserved": "Todos los derechos reservados"
