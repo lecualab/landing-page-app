@@ -56,6 +56,9 @@ importers:
       express:
         specifier: ^5.0.1
         version: 5.0.1
+      ngx-skeleton-loader:
+        specifier: ^10.0.0
+        version: 10.0.0(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))
       ngx-translate-cut:
         specifier: ^19.0.2
         version: 19.0.2(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(@ngx-translate/core@16.0.4(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0)))
@@ -4593,6 +4596,12 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  ngx-skeleton-loader@10.0.0:
+    resolution: {integrity: sha512-TYrWLrdRtzoZoPzurNDUJdAbdyplqgyDztCefEi+clHl5MSumwG4NrGxZC1OVxz7RitomhnF7wTM8T/j+tdwXw==}
+    peerDependencies:
+      '@angular/common': '>=18.0.0'
+      '@angular/core': '>=18.0.0'
 
   ngx-translate-cut@19.0.2:
     resolution: {integrity: sha512-whR20MbMuWXezf+JH80Twzqs70psLL+b08fUBslR8HniTwFmlqRu0n2AeBjlBgNfOoV3ZDoeHnMJw0k5FiiVfw==}
@@ -11065,6 +11074,12 @@ snapshots:
   negotiator@1.0.0: {}
 
   neo-async@2.6.2: {}
+
+  ngx-skeleton-loader@10.0.0(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0)):
+    dependencies:
+      '@angular/common': 19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
+      '@angular/core': 19.2.1(rxjs@7.8.2)(zone.js@0.15.0)
+      tslib: 2.8.1
 
   ngx-translate-cut@19.0.2(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(@ngx-translate/core@16.0.4(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))):
     dependencies:
