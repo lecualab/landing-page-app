@@ -1,8 +1,12 @@
 {
   "home": {
+    "businessUnits": {
+      "commitment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec aliquam ultricies, nunc nisl tincidunt nunc, nec ultricies nunc nisl nec nunc. Nullam auctor, nunc nec aliquam ultricies",
+      "title": "Nuestros servicios"
+    },
     "visionStatement": {
-      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec aliquam ultricies, nunc nisl tincidunt nunc, nec ultricies nunc nisl nec nunc. Nullam auctor, nunc nec aliquam ultricies, nunc nisl tincidunt nunc, nec ultricies nunc nisl nec nunc",
+      "title": "Transformamos ideas en marcas poderosas con identidades sólidas",
+      "message": "Transformamos ideas en marcas poderosas, creando identidades sólidas, mensajes coherentes y experiencias memorables que impulsan tu posicionamiento y crecimiento",
       "action": "Asesórate aquí"
     },
     "hero": {
