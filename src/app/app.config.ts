@@ -1,4 +1,4 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   provideExperimentalZonelessChangeDetection,
@@ -13,6 +13,8 @@ import {
   withComponentInputBinding,
   withViewTransitions,
 } from '@angular/router';
+import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -22,5 +24,14 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    provideTranslateService({
+      defaultLanguage: 'es',
+      loader: {
+        provide: TranslateLoader,
+        deps: [HttpClient],
+        useFactory: (httpClient: HttpClient) =>
+          new TranslateHttpLoader(httpClient, './i18n/', '.json'),
+      },
+    }),
   ],
 };
