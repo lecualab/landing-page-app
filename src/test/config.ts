@@ -8,6 +8,13 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  FakeMissingTranslationHandler,
+  MissingTranslationHandler,
+  TranslateFakeLoader,
+  TranslateLoader,
+  TranslateModule,
+} from '@ngx-translate/core';
 import JasmineDOM from '@testing-library/jasmine-dom';
 
 /**
@@ -18,12 +25,33 @@ import JasmineDOM from '@testing-library/jasmine-dom';
 @NgModule({ providers: [provideExperimentalZonelessChangeDetection()] })
 class ZonelessModule {}
 
+@NgModule({
+  imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useClass: TranslateFakeLoader,
+      },
+      missingTranslationHandler: {
+        provide: MissingTranslationHandler,
+        useClass: FakeMissingTranslationHandler,
+      },
+    }),
+  ],
+})
+class TranslateTestingModule {}
+
 beforeAll(() => {
   jasmine.addMatchers(JasmineDOM);
 });
 
 getTestBed().initTestEnvironment(
-  [BrowserDynamicTestingModule, ZonelessModule, NoopAnimationsModule],
+  [
+    BrowserDynamicTestingModule,
+    ZonelessModule,
+    NoopAnimationsModule,
+    TranslateTestingModule,
+  ],
   platformBrowserDynamicTesting(),
   {
     errorOnUnknownElements: true,
