@@ -1,5 +1,12 @@
 {
+  "footer": {
+    "action": "Contáctanos",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
   "project": {
+    "email": {
+      "contact": "contacto@lecualab.com"
+    },
     "name": "Lecualab"
   }
 }
