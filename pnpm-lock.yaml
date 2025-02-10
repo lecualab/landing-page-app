@@ -68,6 +68,9 @@ importers:
       ngx-translate-cut:
         specifier: ^19.0.2
         version: 19.0.2(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(@ngx-translate/core@16.0.4(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0)))
+      phone:
+        specifier: ^3.1.58
+        version: 3.1.58
       rxjs:
         specifier: ~7.8.2
         version: 7.8.2
@@ -4878,6 +4881,10 @@ packages:
 
   path-type@5.0.0:
     resolution: {integrity: sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==}
+    engines: {node: '>=12'}
+
+  phone@3.1.58:
+    resolution: {integrity: sha512-4R4qfXxNPpl08fxOH0qvTXTodQue0nCnAQP0OIu2i59TDq4QXM0dq/b7ODPNH93setqK5YdMSiMuce0RPsgu4w==}
     engines: {node: '>=12'}
 
   picocolors@1.1.1:
@@ -11410,6 +11417,8 @@ snapshots:
   path-type@4.0.0: {}
 
   path-type@5.0.0: {}
+
+  phone@3.1.58: {}
 
   picocolors@1.1.1: {}
 
