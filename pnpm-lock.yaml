@@ -65,6 +65,9 @@ importers:
       ngx-skeleton-loader:
         specifier: ^10.0.0
         version: 10.0.0(@angular/common@19.1.4(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))
+      phone:
+        specifier: ^3.1.58
+        version: 3.1.58
       rxjs:
         specifier: ~7.8.1
         version: 7.8.1
@@ -4787,6 +4790,10 @@ packages:
 
   path-type@5.0.0:
     resolution: {integrity: sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==}
+    engines: {node: '>=12'}
+
+  phone@3.1.58:
+    resolution: {integrity: sha512-4R4qfXxNPpl08fxOH0qvTXTodQue0nCnAQP0OIu2i59TDq4QXM0dq/b7ODPNH93setqK5YdMSiMuce0RPsgu4w==}
     engines: {node: '>=12'}
 
   picocolors@1.1.1:
@@ -11254,6 +11261,8 @@ snapshots:
   path-type@4.0.0: {}
 
   path-type@5.0.0: {}
+
+  phone@3.1.58: {}
 
   picocolors@1.1.1: {}
 
