@@ -37,6 +37,7 @@
             "inlineStyleLanguage": "scss",
             "styles": ["src/styles.scss"],
             "scripts": [],
+            "allowedCommonJsDependencies": ["phone"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
