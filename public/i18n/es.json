@@ -1,4 +1,9 @@
 {
+  "contact": {
+    "hero": {
+      "title": "Contacto"
+    }
+  },
   "home": {
     "businessUnits": {
       "commitment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec aliquam ultricies, nunc nisl tincidunt nunc, nec ultricies nunc nisl nec nunc. Nullam auctor, nunc nec aliquam ultricies",
