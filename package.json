@@ -46,6 +46,7 @@
     "@angular/compiler-cli": "^19.1.4",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-angular": "^19.7.0",
+    "@netlify/angular-runtime": "^2.2.2",
     "@smarttools/eslint-plugin-rxjs": "^1.0.17",
     "@stylistic/eslint-plugin": "^3.0.1",
     "@tailwindcss/postcss": "^4.0.1",
