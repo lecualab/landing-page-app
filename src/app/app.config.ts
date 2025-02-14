@@ -5,6 +5,10 @@ import {
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldDefaultOptions,
+} from '@angular/material/form-field';
+import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
@@ -36,5 +40,12 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     importProvidersFrom(NgxTranslateCutModule),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: {
+        hideRequiredMarker: true,
+        appearance: 'outline',
+      } satisfies MatFormFieldDefaultOptions,
+    },
   ],
 };
