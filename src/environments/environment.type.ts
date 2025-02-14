@@ -1,1 +1,3 @@
-export type Environment = Readonly<object>;
+export type Environment = Readonly<{
+  apiUrl: string;
+}>;
