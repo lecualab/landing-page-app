@@ -1,4 +1,9 @@
 {
+  "contact": {
+    "hero": {
+      "title": "Contacto"
+    }
+  },
   "home": {
     "businessUnits": {
       "title": "Nuestras unidades de negocio"
