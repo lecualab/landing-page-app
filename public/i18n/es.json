@@ -1,5 +1,68 @@
 {
   "contact": {
+    "header": {
+      "title": "Contáctanos",
+      "subtitle": "¿Tienes un proyecto en mente? ¡Cuéntanos! Estamos aquí para ayudarte a hacerlo realidad."
+    },
+    "form": {
+      "firstName": {
+        "label": "Nombre",
+        "error": {
+          "required": "Tu nombre es requerido"
+        }
+      },
+      "lastName": {
+        "label": "Apellido",
+        "error": {
+          "required": "Tu apellido es requerido"
+        }
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "error": {
+          "required": "Tu correo electrónico es requerido",
+          "invalid": "Tu correo electrónico no es válido"
+        }
+      },
+      "phoneNumber": {
+        "label": "Número de teléfono",
+        "hint": "Incluye tu código de país (ej. +56)",
+        "error": {
+          "required": "Tu número de teléfono es requerido",
+          "invalid": "Tu número de teléfono no es válido"
+        }
+      },
+      "company": {
+        "label": "Empresa",
+        "error": {
+          "required": "El nombre de tu empresa es requerido"
+        }
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Estoy buscando apoyo para impulsar mi proyecto sobre...",
+        "error": {
+          "required": "Necesitamos saber en qué podemos ayudarte"
+        }
+      },
+      "preferredContactMethods": {
+        "label": "Medio de contacto preferido",
+        "options": {
+          "email": "Correo electrónico",
+          "phone_call": "Llamada telefónica",
+          "whatsapp": "WhatsApp"
+        },
+        "error": {
+          "required": "Elige cómo quieres que te contactemos"
+        }
+      },
+      "received": {
+        "title": "Solicitud recibida con éxito",
+        "message": "Pronto nos pondremos en contacto contigo"
+      },
+      "error": "Cuac! Algo falló. No podemos recibir tu solicitud ahora :(",
+      "action": "Enviar"
+    },
     "hero": {
       "title": "Contacto"
     }
