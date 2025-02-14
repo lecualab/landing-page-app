@@ -2,6 +2,21 @@
 @import 'tailwindcss/index.css';
 @plugin '@tailwindcss/typography';
 
+@theme {
+  --color-\*: initial;
+
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(0, 0%, 90%);
+  --color-gray: hsl(0, 0%, 50%);
+  --color-dark-gray: hsl(0, 0%, 20%);
+  --color-black: hsl(0, 0%, 5%);
+
+  --color-primary: hsl(183, 72%, 41%);
+  --color-secondary: hsl(28, 88%, 57%);
+  --color-terciary: hsl(333, 21%, 92%);
+  --color-accent: hsl(341, 43%, 47%);
+}
+
 html,
 body {
   height: 100%;
