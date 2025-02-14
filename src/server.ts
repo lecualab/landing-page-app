@@ -5,7 +5,9 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
+import { getContext } from '@netlify/angular-runtime/context';
 import express from 'express';
+import { Http2ServerRequest } from 'node:http2';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CacheResponseManager } from './cache.server';
@@ -92,3 +94,14 @@ if (isMainModule(import.meta.url)) {
  * The request handler used by the Angular CLI (dev-server and during build).
  */
 export const reqHandler = createNodeRequestHandler(app);
+
+/**
+ * The request handler used by Netlify Functions.
+ */
+export async function netlifyAppEngineHandler(
+  request: Http2ServerRequest,
+): Promise<Response> {
+  // TODO: Add caching
+  const result = await angularApp.handle(request, getContext());
+  return result ?? new Response('Not found', { status: 404 });
+}
