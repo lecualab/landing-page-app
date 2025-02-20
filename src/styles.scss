@@ -1,3 +1,4 @@
+@use '@angular/material' as mat;
 @use 'styles/index';
 @import 'tailwindcss/index.css';
 @plugin '@tailwindcss/typography';
@@ -17,6 +18,18 @@
   --color-accent: hsl(341, 43%, 47%);
 }
 
+:root {
+  --brand-font: 'Montserrat', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  @include mat.theme(
+    (
+      typography: var(--brand-font),
+    )
+  );
+}
+
 html,
 body {
   height: 100%;
@@ -24,5 +37,5 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: var(--brand-font);
 }
