@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'styles/theme-colors' as theme;
 @use 'styles/index';
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -20,8 +21,16 @@
   @include mat.theme(
     (
       typography: var(--brand-font),
+      color: (
+        primary: theme.$primary-palette,
+        tertiary: theme.$tertiary-palette,
+      ),
     )
   );
+
+  @media (prefers-contrast: more) {
+    @include theme.high-contrast-overrides(color-scheme);
+  }
 }
 
 html,
