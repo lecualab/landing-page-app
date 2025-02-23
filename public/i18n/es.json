@@ -4,6 +4,11 @@
       "title": "Contacto"
     }
   },
+  "snackBar": {
+    "actions": {
+      "close": "Cerrar"
+    }
+  },
   "home": {
     "brands": {
       "title": "Conoce a quienes han | confiado en nosotros"
