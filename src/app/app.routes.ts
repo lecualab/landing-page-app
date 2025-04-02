@@ -9,6 +9,10 @@ export const routes: Routes = [
     path: 'contact',
     loadChildren: () => import('./pages/contact-page').then((m) => m.routes),
   },
+  {
+    path: 'embedded',
+    loadChildren: () => import('./pages/embedded-page').then((m) => m.routes),
+  },
   // Redirect to home when no route matches
   { path: '**', pathMatch: 'full', redirectTo: '/' },
 ];
