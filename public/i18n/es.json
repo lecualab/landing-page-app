@@ -1,5 +1,9 @@
 {
   "contact": {
+    "meta": {
+      "title": "Contacto",
+      "description": "¿Tienes un proyecto en mente? ¡Cuéntanos! Estamos aquí para ayudarte a hacerlo realidad."
+    },
     "header": {
       "title": "Contáctanos",
       "subtitle": "¿Tienes un proyecto en mente? ¡Cuéntanos! Estamos aquí para ayudarte a hacerlo realidad."
@@ -73,6 +77,10 @@
     }
   },
   "home": {
+    "meta": {
+      "title": "Agencia de publicidad y diseño",
+      "description": "Transformamos tus ideas en marcas poderosas con identidades sólidas."
+    },
     "brands": {
       "title": "Conoce a quienes han | confiado en nosotros"
     },
