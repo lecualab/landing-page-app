@@ -15,6 +15,7 @@ describe('EmbeddedRenderComponent', () => {
             data: of({
               embeddedRender: {
                 renderHtmlBase64: btoa(expected),
+                description: 'description',
               },
             }),
           },

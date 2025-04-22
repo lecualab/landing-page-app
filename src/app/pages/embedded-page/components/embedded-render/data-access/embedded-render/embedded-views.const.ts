@@ -6,5 +6,17 @@ export const EMBEDDED_VIEWS: readonly EmbeddedRenderDto[] = [
     name: 'Asesoría gratuita',
     renderHtmlBase64:
       'PCEtLSBDYWwgaW5saW5lIGVtYmVkIGNvZGUgYmVnaW5zIC0tPgo8ZGl2IHN0eWxlPSJ3aWR0aDoxMDAlO2hlaWdodDoxMDAlO292ZXJmbG93OnNjcm9sbCIgaWQ9Im15LWNhbC1pbmxpbmUiPjwvZGl2Pgo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+CiAgKGZ1bmN0aW9uIChDLCBBLCBMKSB7IGxldCBwID0gZnVuY3Rpb24gKGEsIGFyKSB7IGEucS5wdXNoKGFyKTsgfTsgbGV0IGQgPSBDLmRvY3VtZW50OyBDLkNhbCA9IEMuQ2FsIHx8IGZ1bmN0aW9uICgpIHsgbGV0IGNhbCA9IEMuQ2FsOyBsZXQgYXIgPSBhcmd1bWVudHM7IGlmICghY2FsLmxvYWRlZCkgeyBjYWwubnMgPSB7fTsgY2FsLnEgPSBjYWwucSB8fCBbXTsgZC5oZWFkLmFwcGVuZENoaWxkKGQuY3JlYXRlRWxlbWVudCgic2NyaXB0IikpLnNyYyA9IEE7IGNhbC5sb2FkZWQgPSB0cnVlOyB9IGlmIChhclswXSA9PT0gTCkgeyBjb25zdCBhcGkgPSBmdW5jdGlvbiAoKSB7IHAoYXBpLCBhcmd1bWVudHMpOyB9OyBjb25zdCBuYW1lc3BhY2UgPSBhclsxXTsgYXBpLnEgPSBhcGkucSB8fCBbXTsgaWYodHlwZW9mIG5hbWVzcGFjZSA9PT0gInN0cmluZyIpe2NhbC5uc1tuYW1lc3BhY2VdID0gY2FsLm5zW25hbWVzcGFjZV0gfHwgYXBpO3AoY2FsLm5zW25hbWVzcGFjZV0sIGFyKTtwKGNhbCwgWyJpbml0TmFtZXNwYWNlIiwgbmFtZXNwYWNlXSk7fSBlbHNlIHAoY2FsLCBhcik7IHJldHVybjt9IHAoY2FsLCBhcik7IH07IH0pKHdpbmRvdywgImh0dHBzOi8vYXBwLmNhbC5jb20vZW1iZWQvZW1iZWQuanMiLCAiaW5pdCIpOwpDYWwoImluaXQiLCAiYXNlc29yaWEtZ3JhdHVpdGEiLCB7b3JpZ2luOiJodHRwczovL2NhbC5jb20ifSk7CgogIENhbC5uc1siYXNlc29yaWEtZ3JhdHVpdGEiXSgiaW5saW5lIiwgewogICAgZWxlbWVudE9yU2VsZWN0b3I6IiNteS1jYWwtaW5saW5lIiwKICAgIGNvbmZpZzogeyJsYXlvdXQiOiJtb250aF92aWV3IiwidGhlbWUiOiJsaWdodCJ9LAogICAgY2FsTGluazogImxlY3VhbGFiL2FzZXNvcmlhLWdyYXR1aXRhIiwKICB9KTsKCiAgQ2FsLm5zWyJhc2Vzb3JpYS1ncmF0dWl0YSJdKCJ1aSIsIHsidGhlbWUiOiJsaWdodCIsImNzc1ZhcnNQZXJUaGVtZSI6eyJsaWdodCI6eyJjYWwtYnJhbmQiOiIjMTk5MzlBIn0sImRhcmsiOnsiY2FsLWJyYW5kIjoiI0YyOEIzMSJ9fSwiaGlkZUV2ZW50VHlwZURldGFpbHMiOmZhbHNlLCJsYXlvdXQiOiJtb250aF92aWV3In0pOwogIDwvc2NyaXB0PgogIDwhLS0gQ2FsIGlubGluZSBlbWJlZCBjb2RlIGVuZHMgLS0+',
+    description:
+      'Transformemos tu marca con poder. Elige el día y hora que más te acomode.',
+    keywords: [
+      'agendar diagnóstico diseño gráfico empresarial',
+      'consulta gratuita agencia de branding',
+      'agendar asesoría en diseño corporativo',
+      'reunión de evaluación para branding empresarial',
+      'reserva de hora con estudio de diseño gráfico',
+      'diagnóstico visual gratuito para empresas',
+      'agendar llamada con agencia de diseño estratégico',
+      'branding gratuito primera reunión',
+    ],
   },
 ];

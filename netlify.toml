@@ -1,0 +1,6 @@
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+[plugins.inputs]
+exclude = ['**/**/index.csr.html', '**/**/embedded/index.html']
+trailingSlash = true
