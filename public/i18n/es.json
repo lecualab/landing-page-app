@@ -1,4 +1,12 @@
 {
+  "cookieConsent": {
+    "header": "Este sitio web utiliza cookies para mejorar tu experiencia.",
+    "message": "Al hacer clic en \"Aceptar\", aceptas el uso de todas las cookies.",
+    "link": "Leer más",
+    "policy": "Política de cookies",
+    "allow": "Aceptar",
+    "deny": "Rechazar"
+  },
   "contact": {
     "meta": {
       "title": "Contacto",
