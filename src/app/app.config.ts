@@ -21,8 +21,11 @@ import {
 } from '@angular/router';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideNgcCookieConsent } from 'ngx-cookieconsent';
+import { PixelModule } from 'ngx-multi-pixel';
 import { NgxTranslateCutModule } from 'ngx-translate-cut';
 import { routes } from './app.routes';
+import { FacebookPixel } from './utils/constants';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -44,7 +47,13 @@ export const appConfig: ApplicationConfig = {
           ),
       },
     }),
-    importProvidersFrom(NgxTranslateCutModule),
+    importProvidersFrom(
+      NgxTranslateCutModule,
+      PixelModule.forRoot({
+        pixelId: [FacebookPixel.LANDING_PAGE_ACCESS],
+      }),
+    ),
+    provideNgcCookieConsent({ enabled: false }),
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {

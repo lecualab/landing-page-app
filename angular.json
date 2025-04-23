@@ -35,8 +35,13 @@
               }
             ],
             "inlineStyleLanguage": "scss",
-            "styles": ["src/styles.scss"],
-            "scripts": [],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/cookieconsent/build/cookieconsent.min.css"
+            ],
+            "scripts": [
+              "node_modules/cookieconsent/build/cookieconsent.min.js"
+            ],
             "allowedCommonJsDependencies": ["phone"],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -108,8 +113,11 @@
               }
             ],
             "inlineStyleLanguage": "scss",
-            "styles": ["src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "src/styles.scss",
+              "node_modules/cookieconsent/build/cookieconsent.min.css"
+            ],
+            "scripts": ["node_modules/cookieconsent/build/cookieconsent.min.js"]
           }
         },
         "lint": {

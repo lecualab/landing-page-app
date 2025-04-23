@@ -59,9 +59,18 @@ importers:
       cache-manager:
         specifier: ^6.4.1
         version: 6.4.1
+      cookieconsent:
+        specifier: ^3.1.1
+        version: 3.1.1
       express:
         specifier: ^5.0.1
         version: 5.0.1
+      ngx-cookieconsent:
+        specifier: ^8.0.0
+        version: 8.0.0(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(cookieconsent@3.1.1)(rxjs@7.8.2)
+      ngx-multi-pixel:
+        specifier: ^2.2.2
+        version: 2.2.2(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))
       ngx-skeleton-loader:
         specifier: ^10.0.0
         version: 10.0.0(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))
@@ -2878,6 +2887,9 @@ packages:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
 
+  cookieconsent@3.1.1:
+    resolution: {integrity: sha512-v8JWLJcI7Zs9NWrs8hiVldVtm3EBF70TJI231vxn6YToBGj0c9dvdnYwltydkAnrbBMOM/qX1xLFrnTfm5wTag==}
+
   copy-anything@2.0.6:
     resolution: {integrity: sha512-1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==}
 
@@ -4648,6 +4660,20 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  ngx-cookieconsent@8.0.0:
+    resolution: {integrity: sha512-stH6Y9P6D9NvifBMp799c/8s1KBUKlzk4MBAASJuVcin9mLehvghGay/JrDmTO+FumlDEr5UpZNpdxiqSJF8kQ==}
+    peerDependencies:
+      '@angular/common': '>=19.0.0'
+      '@angular/core': '>=19.0.0'
+      cookieconsent: ^3.1.1
+      rxjs: ^6.5.3 || ^7.4.0
+
+  ngx-multi-pixel@2.2.2:
+    resolution: {integrity: sha512-EsCo9lu04GrKaD6PwkaAicaXQw3Zs76KhGraT67Cqq+JUdnENrvBNmrcFwhlMg7ZWP++67lPJKpJOs2fbJ369A==}
+    peerDependencies:
+      '@angular/common': '>=11.0.1'
+      '@angular/core': '>=11.0.1'
 
   ngx-skeleton-loader@10.0.0:
     resolution: {integrity: sha512-TYrWLrdRtzoZoPzurNDUJdAbdyplqgyDztCefEi+clHl5MSumwG4NrGxZC1OVxz7RitomhnF7wTM8T/j+tdwXw==}
@@ -9221,6 +9247,8 @@ snapshots:
 
   cookie@0.7.2: {}
 
+  cookieconsent@3.1.1: {}
+
   copy-anything@2.0.6:
     dependencies:
       is-what: 3.14.1
@@ -11193,6 +11221,20 @@ snapshots:
   negotiator@1.0.0: {}
 
   neo-async@2.6.2: {}
+
+  ngx-cookieconsent@8.0.0(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(cookieconsent@3.1.1)(rxjs@7.8.2):
+    dependencies:
+      '@angular/common': 19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
+      '@angular/core': 19.2.1(rxjs@7.8.2)(zone.js@0.15.0)
+      cookieconsent: 3.1.1
+      rxjs: 7.8.2
+      tslib: 2.8.1
+
+  ngx-multi-pixel@2.2.2(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0)):
+    dependencies:
+      '@angular/common': 19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
+      '@angular/core': 19.2.1(rxjs@7.8.2)(zone.js@0.15.0)
+      tslib: 2.8.1
 
   ngx-skeleton-loader@10.0.0(@angular/common@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0)):
     dependencies:
