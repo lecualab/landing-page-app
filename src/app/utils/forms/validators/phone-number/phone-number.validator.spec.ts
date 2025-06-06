@@ -1,13 +1,7 @@
-import * as PhoneModule from 'phone';
 import { validatePhoneNumber } from './phone-number.validator';
 
+// INFO: This works as an integration test for the phone library
 describe('validatePhoneNumber', () => {
-  let phone: jasmine.Spy<typeof PhoneModule.phone>;
-
-  beforeEach(() => {
-    phone = spyOn(PhoneModule, 'phone');
-  });
-
   describe('when value is empty', () => {
     it('should return null', () => {
       const actual = validatePhoneNumber({ value: '' } as any);
@@ -17,24 +11,16 @@ describe('validatePhoneNumber', () => {
   });
 
   describe('when value is a valid phone number', () => {
-    beforeEach(() => {
-      phone.and.returnValue({ isValid: true } as any);
-    });
-
     it('should return null', () => {
-      const actual = validatePhoneNumber({ value: '1234567890' } as any);
+      const actual = validatePhoneNumber({ value: '+56987654321' } as any);
 
       expect(actual).toBeNull();
     });
   });
 
   describe('when value is an invalid phone number', () => {
-    beforeEach(() => {
-      phone.and.returnValue({ isValid: false } as any);
-    });
-
     it('should return an error', () => {
-      const actual = validatePhoneNumber({ value: '1234567890' } as any);
+      const actual = validatePhoneNumber({ value: 'invalid-number' } as any);
 
       expect(actual).toEqual({ phoneNumber: true });
     });

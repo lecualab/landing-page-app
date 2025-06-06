@@ -16,31 +16,36 @@ describe('LoaderComponent', () => {
 
   describe('when setting size', () => {
     it('should render the loader with default size', async () => {
-      const view = await render(LoaderComponent);
+      const { fixture } = await render(LoaderComponent);
+
       const spinnerElement = await getNativeElement(
-        view.fixture,
+        fixture,
         MatProgressSpinnerHarness,
       );
 
-      expect(spinnerElement).toHaveAttribute('ng-reflect-diameter', '48');
+      const expectedDiameter = `${LoaderSizeDiameter[LoaderSize.MD]}px`;
+
+      expect(spinnerElement).toHaveStyle(`width: ${expectedDiameter}`);
+      expect(spinnerElement).toHaveStyle(`height: ${expectedDiameter}`);
     });
 
     for (const size of Object.values(LoaderSize)) {
       it(`should render the loader with size ${size}`, async () => {
-        const view = await render(LoaderComponent, {
+        const { fixture } = await render(LoaderComponent, {
           inputs: {
             ...aliasedInput('size', size),
           },
         });
+
         const spinnerElement = await getNativeElement(
-          view.fixture,
+          fixture,
           MatProgressSpinnerHarness,
         );
 
-        expect(spinnerElement).toHaveAttribute(
-          'ng-reflect-diameter',
-          LoaderSizeDiameter[size].toString(),
-        );
+        const expectedDiameter = `${LoaderSizeDiameter[size]}px`;
+
+        expect(spinnerElement).toHaveStyle(`width: ${expectedDiameter}`);
+        expect(spinnerElement).toHaveStyle(`height: ${expectedDiameter}`);
       });
     }
   });
