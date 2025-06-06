@@ -26,7 +26,7 @@ export class SocialNetworkService {
     never
   >({
     defaultValue: [],
-    loader: () =>
+    stream: () =>
       of<readonly SocialNetworkResponseDto[]>([
         {
           name: 'Facebook',

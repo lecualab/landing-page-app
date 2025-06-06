@@ -8,7 +8,7 @@ import { BrandDto } from './dtos';
 export class BrandsService {
   readonly #brandsResource = httpResource<
     StandardizedResponseDto<readonly BrandDto[]>
-  >(`${environment.apiUrl}/v1/brands`, {
+  >(() => `${environment.apiUrl}/v1/brands`, {
     defaultValue: { data: [] },
   });
 

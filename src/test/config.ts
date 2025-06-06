@@ -1,13 +1,10 @@
-import {
-  NgModule,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import { getTestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting,
-} from '@angular/platform-browser-dynamic/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserTestingModule,
+  platformBrowserTesting,
+} from '@angular/platform-browser/testing';
 import {
   FakeMissingTranslationHandler,
   MissingTranslationHandler,
@@ -22,7 +19,7 @@ import JasmineDOM from '@testing-library/jasmine-dom';
  * THIS MODULE USED TO CONFIGURE EXPERIMENTAL ZONELESS CHANGE DETECTION.
  * WHEN ZONELESS CHANGE DETECTION WILL BE STABLE, THIS MODULE SHOULD BE REMOVED.
  */
-@NgModule({ providers: [provideExperimentalZonelessChangeDetection()] })
+@NgModule({ providers: [provideZonelessChangeDetection()] })
 class ZonelessModule {}
 
 @NgModule({
@@ -47,12 +44,12 @@ beforeAll(() => {
 
 getTestBed().initTestEnvironment(
   [
-    BrowserDynamicTestingModule,
+    BrowserTestingModule,
     ZonelessModule,
     NoopAnimationsModule,
     TranslateTestingModule,
   ],
-  platformBrowserDynamicTesting(),
+  platformBrowserTesting(),
   {
     errorOnUnknownElements: true,
     errorOnUnknownProperties: true,

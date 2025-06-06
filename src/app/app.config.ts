@@ -2,7 +2,8 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
-  provideExperimentalZonelessChangeDetection,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -29,7 +30,8 @@ import { FacebookPixel } from './utils/constants';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
     provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
     provideClientHydration(withEventReplay(), withIncrementalHydration()),
     provideAnimationsAsync(),

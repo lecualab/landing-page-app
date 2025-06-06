@@ -25,4 +25,9 @@ export const serverRoutes: readonly ServerRoute[] = [
     getPrerenderParams: () =>
       Promise.resolve(EMBEDDED_VIEWS.map(({ id }) => ({ id }))),
   },
+  {
+    path: 'embedded/**',
+    renderMode: RenderMode.Prerender,
+    getPrerenderParams: () => Promise.resolve([]),
+  },
 ];

@@ -7,7 +7,7 @@ import { BusinessUnitDto } from './dtos';
 export class BusinessUnitService {
   readonly #businessUnitsResource = rxResource({
     defaultValue: [],
-    loader: () =>
+    stream: () =>
       of<readonly BusinessUnitDto[]>([
         {
           id: 1,
