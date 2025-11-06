@@ -1,4 +1,4 @@
-FROM node:22-alpine AS base_image
+FROM node:24-alpine AS base_image
 
 FROM base_image AS build
 WORKDIR /app
@@ -8,8 +8,7 @@ RUN corepack enable
 COPY pnpm-lock.yaml ./
 RUN pnpm fetch
 COPY . .
-RUN pnpm install --offline
-RUN pnpm build
+RUN pnpm install --offline && pnpm build
 
 FROM base_image
 WORKDIR /app
