@@ -17,7 +17,7 @@ import { NgxTranslateCutPipe } from 'ngx-translate-cut';
   template: `
     <section
       data-testid="vision-statement"
-      class="relative z-20 -mt-12 rounded-md bg-white p-8 shadow-lg lg:grid lg:min-h-78 lg:grid-cols-3 lg:items-center lg:gap-x-14 lg:px-20 lg:py-12"
+      class="relative z-20 -mt-12 rounded-md bg-white p-8 shadow-lg lg:grid lg:min-h-78 lg:grid-cols-3 lg:items-center lg:gap-x-14 lg:px-16 lg:py-12"
     >
       <h2
         data-testid="vision-statement-title"

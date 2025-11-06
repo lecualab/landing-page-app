@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { EMBEDDED_VIEWS } from './pages/embedded-page/components/embedded-render';
 
 export const routes: Routes = [
   {
@@ -7,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    loadChildren: () => import('./pages/contact-page').then((m) => m.routes),
+    redirectTo: () => `embedded/${EMBEDDED_VIEWS[0].id}`,
   },
   {
     path: 'embedded',
