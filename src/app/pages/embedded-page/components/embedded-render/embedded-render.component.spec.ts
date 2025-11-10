@@ -1,4 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
+import { SeoService } from '@app/utils/seo';
 import { render, screen } from '@testing-library/angular';
 import { of } from 'rxjs';
 import { EmbeddedRenderComponent } from './embedded-render.component';
@@ -19,6 +20,12 @@ describe('EmbeddedRenderComponent', () => {
               },
             }),
           },
+        },
+        {
+          provide: SeoService,
+          useValue: jasmine.createSpyObj<SeoService>({
+            updateMetaTags: undefined,
+          }),
         },
       ],
     });

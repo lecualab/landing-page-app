@@ -1,18 +1,18 @@
 import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import { getTestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   BrowserTestingModule,
   platformBrowserTesting,
 } from '@angular/platform-browser/testing';
 import {
-  FakeMissingTranslationHandler,
-  MissingTranslationHandler,
-  TranslateFakeLoader,
-  TranslateLoader,
+  DefaultMissingTranslationHandler,
+  provideMissingTranslationHandler,
+  provideTranslateLoader,
   TranslateModule,
+  TranslateNoOpLoader,
 } from '@ngx-translate/core';
 import JasmineDOM from '@testing-library/jasmine-dom';
+import { NgxTranslateCutModule } from 'ngx-translate-cut';
 
 /**
  * INFO:
@@ -25,15 +25,12 @@ class ZonelessModule {}
 @NgModule({
   imports: [
     TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useClass: TranslateFakeLoader,
-      },
-      missingTranslationHandler: {
-        provide: MissingTranslationHandler,
-        useClass: FakeMissingTranslationHandler,
-      },
+      loader: provideTranslateLoader(TranslateNoOpLoader),
+      missingTranslationHandler: provideMissingTranslationHandler(
+        DefaultMissingTranslationHandler,
+      ),
     }),
+    NgxTranslateCutModule.forRoot(),
   ],
 })
 class TranslateTestingModule {}
@@ -43,12 +40,7 @@ beforeAll(() => {
 });
 
 getTestBed().initTestEnvironment(
-  [
-    BrowserTestingModule,
-    ZonelessModule,
-    NoopAnimationsModule,
-    TranslateTestingModule,
-  ],
+  [BrowserTestingModule, ZonelessModule, TranslateTestingModule],
   platformBrowserTesting(),
   {
     errorOnUnknownElements: true,
