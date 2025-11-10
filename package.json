@@ -9,7 +9,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "pnpm test -- --no-watch --no-progress --browsers=ChromeHeadless",
+    "test:ci": "pnpm test --no-watch --no-progress --browsers=ChromeHeadless",
     "analyze-bundle": "ng build --configuration=analyze-bundle && source-map-explorer dist/**/*.js --no-border-checks",
     "lint": "ng lint",
     "lint:types": "tsc --noEmit",
