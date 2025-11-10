@@ -2,7 +2,9 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
+  inject,
   provideBrowserGlobalErrorListeners,
+  provideEnvironmentInitializer,
   provideZonelessChangeDetection,
 } from '@angular/core';
 import {
@@ -27,6 +29,7 @@ import { PixelModule } from 'ngx-multi-pixel';
 import { NgxTranslateCutModule } from 'ngx-translate-cut';
 import { routes } from './app.routes';
 import { FacebookPixel } from './utils/constants';
+import { CookiesService } from './utils/cookies';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -36,6 +39,10 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay(), withIncrementalHydration()),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    provideEnvironmentInitializer(() => {
+      // INFO: Manage cookie consent and pixel tracking
+      inject(CookiesService);
+    }),
     provideTranslateService({
       defaultLanguage: 'es',
       loader: {

@@ -1,8 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer';
 import { ToolbarComponent } from './components/toolbar';
-import { CookiesService } from './utils/cookies';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +20,4 @@ import { CookiesService } from './utils/cookies';
     </footer>
   `,
 })
-export class AppComponent {
-  // INFO: Manage cookie consent and pixel tracking
-  protected readonly cookiesService = inject(CookiesService);
-}
+export class AppComponent {}
