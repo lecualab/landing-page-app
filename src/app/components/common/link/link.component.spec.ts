@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/angular';
+import { userEvent } from '@testing-library/user-event';
 import { LinkComponent } from './link.component';
 
 describe('LinkComponent', () => {
@@ -53,7 +54,7 @@ describe('LinkComponent', () => {
         imports: [LinkComponent],
       });
 
-      screen.getByTestId('link').click();
+      await userEvent.click(screen.getByTestId('link'));
 
       // @ts-expect-error - Overloaded function
       expect(scrollToSpy).toHaveBeenCalledWith({
@@ -69,7 +70,7 @@ describe('LinkComponent', () => {
           imports: [LinkComponent],
         });
 
-        screen.getByTestId('link').click();
+        await userEvent.click(screen.getByTestId('link'));
 
         expect(scrollToSpy).not.toHaveBeenCalled();
       });

@@ -1,4 +1,4 @@
-import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
@@ -16,14 +16,13 @@ import {
   withEventReplay,
   withIncrementalHydration,
 } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
   provideRouter,
   withComponentInputBinding,
   withViewTransitions,
 } from '@angular/router';
-import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideNgcCookieConsent } from 'ngx-cookieconsent';
 import { PixelModule } from 'ngx-multi-pixel';
 import { NgxTranslateCutModule } from 'ngx-translate-cut';
@@ -37,27 +36,20 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
     provideClientHydration(withEventReplay(), withIncrementalHydration()),
-    provideAnimationsAsync(),
     provideHttpClient(withFetch()),
     provideEnvironmentInitializer(() => {
       // INFO: Manage cookie consent and pixel tracking
       inject(CookiesService);
     }),
     provideTranslateService({
-      defaultLanguage: 'es',
-      loader: {
-        provide: TranslateLoader,
-        deps: [HttpClient],
-        useFactory: (httpClient: HttpClient) =>
-          new TranslateHttpLoader(
-            httpClient,
-            './i18n/',
-            `.json?v=${Date.now()}`,
-          ),
-      },
+      fallbackLang: 'es',
+      loader: provideTranslateHttpLoader({
+        prefix: './i18n/',
+        enforceLoading: true,
+      }),
     }),
     importProvidersFrom(
-      NgxTranslateCutModule,
+      NgxTranslateCutModule.forRoot(),
       PixelModule.forRoot({
         pixelId: [FacebookPixel.LANDING_PAGE_ACCESS],
       }),
