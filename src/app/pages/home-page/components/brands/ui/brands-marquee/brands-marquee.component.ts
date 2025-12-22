@@ -50,9 +50,9 @@ import { BrandDto } from '../../data-access/brands/dtos';
   `,
   styles: `
     .marquee {
-      animation: marquee 10s linear infinite;
+      animation: marquee 8s linear infinite;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1024px) {
         animation-duration: 20s;
 
         :host:hover & {
