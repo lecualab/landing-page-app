@@ -20,7 +20,7 @@ import { BrandDto } from '../../data-access/brands/dtos';
               class="relative flex h-25 w-62 items-center justify-center overflow-hidden rounded-md px-4 py-2 lg:h-25 lg:w-62"
             >
               <picture
-                class="relative h-full w-full grayscale hover:grayscale-0"
+                class="relative h-full w-full lg:grayscale lg:hover:grayscale-0"
               >
                 @if (brand.websiteUrl) {
                   <app-link noStyle [href]="brand.websiteUrl">
