@@ -5,7 +5,6 @@ import {
   inject,
   provideBrowserGlobalErrorListeners,
   provideEnvironmentInitializer,
-  provideZonelessChangeDetection,
 } from '@angular/core';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -33,7 +32,6 @@ import { CookiesService } from './utils/cookies';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
     provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
     provideClientHydration(withEventReplay(), withIncrementalHydration()),
     provideHttpClient(withFetch()),

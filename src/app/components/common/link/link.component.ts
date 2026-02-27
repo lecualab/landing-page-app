@@ -112,7 +112,7 @@ export class LinkComponent {
   );
 
   @HostListener('click')
-  private __scrollToTopWhenComponentIsClicked() {
+  protected __scrollToTopWhenComponentIsClicked() {
     if (this.$isExternalHref()) return;
 
     this.#document.defaultView?.scrollTo({
