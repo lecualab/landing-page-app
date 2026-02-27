@@ -1,8 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { EmbeddedRenderService } from './embedded-render.service';
 
-// TODO: Implement tests
-xdescribe('EmbeddedRenderService', () => {
+describe.todo('EmbeddedRenderService', () => {
   let service: EmbeddedRenderService;
 
   beforeEach(() => {

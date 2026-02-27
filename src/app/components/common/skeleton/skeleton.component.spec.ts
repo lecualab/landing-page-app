@@ -21,7 +21,7 @@ describe('SkeletonComponent', () => {
         });
         const actual = screen.getAllByRole('progressbar');
 
-        expect(actual).toHaveSize(expected);
+        expect(actual).toHaveLength(expected);
       });
     }
 
@@ -35,7 +35,7 @@ describe('SkeletonComponent', () => {
 
         const actual = screen.getAllByRole('progressbar');
 
-        expect(actual).toHaveSize(1);
+        expect(actual).toHaveLength(1);
       });
     });
   });
@@ -53,7 +53,7 @@ describe('SkeletonComponent', () => {
             });
             const actual = screen.getAllByRole('progressbar');
 
-            expect(actual).toHaveSize(1);
+            expect(actual).toHaveLength(1);
           });
         });
       }

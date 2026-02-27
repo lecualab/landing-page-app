@@ -30,12 +30,15 @@ describe('VisionStatementComponent', () => {
     expect(actual).toHaveTextContent(/visionStatement.action$/);
   });
 
-  // INFO: This test is skipped because I don't know how to simulate large screens in the testing environment.
-  xit('should render the lecualina animation on large screens', async () => {
-    await render(VisionStatementComponent);
+  // INFO: This test is to-do because I don't know how to simulate large screens in the testing environment.
+  it.todo(
+    'should render the lecualina animation on large screens',
+    async () => {
+      await render(VisionStatementComponent);
 
-    const actual = screen.queryByTestId('lecualina-animation');
+      const actual = screen.queryByTestId('lecualina-animation');
 
-    expect(actual).toBeVisible();
-  });
+      expect(actual).toBeVisible();
+    },
+  );
 });

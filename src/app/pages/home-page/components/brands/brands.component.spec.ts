@@ -1,15 +1,16 @@
+import { createMock } from '@golevelup/ts-vitest';
 import { render, screen } from '@testing-library/angular';
+import type { MockedObject } from 'vitest';
 import { BrandsComponent } from './brands.component';
 import { BrandsService } from './data-access/brands';
 import { BrandDto } from './data-access/brands/dtos';
 
 describe('BrandsComponent', () => {
-  let brandsService: jasmine.SpyObj<BrandsService>;
+  let brandsService: MockedObject<BrandsService>;
 
   beforeEach(() => {
-    brandsService = jasmine.createSpyObj<BrandsService>({
-      $brands: [],
-      $isLoading: false,
+    brandsService = createMock<BrandsService>({
+      $isLoading: () => false,
     });
   });
 
@@ -20,7 +21,7 @@ describe('BrandsComponent', () => {
       imageUrl: `https://example.com/brand-${i}.png`,
     }));
 
-    brandsService.$brands.and.returnValue(expected);
+    brandsService.$brands.mockReturnValue(expected);
 
     await render(BrandsComponent, {
       providers: [{ provide: BrandsService, useValue: brandsService }],

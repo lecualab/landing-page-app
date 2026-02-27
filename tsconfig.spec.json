@@ -4,8 +4,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["jasmine", "@testing-library/jasmine-dom"]
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "files": ["src/test/config.ts"],
+  "files": ["./vitest.setup.ts", "src/test/providers.ts"],
   "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }

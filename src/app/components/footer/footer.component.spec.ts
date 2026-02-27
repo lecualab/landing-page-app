@@ -1,15 +1,16 @@
 import { faJs } from '@fortawesome/free-brands-svg-icons';
+import { createMock } from '@golevelup/ts-vitest';
 import { render, screen, within } from '@testing-library/angular';
+import type { MockedObject } from 'vitest';
 import { SocialNetworkService } from './data-access/social-network';
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
-  let socialNetworkService: jasmine.SpyObj<SocialNetworkService>;
+  let socialNetworkService: MockedObject<SocialNetworkService>;
 
   beforeEach(() => {
-    socialNetworkService = jasmine.createSpyObj<SocialNetworkService>({
-      $socialNetworks: [],
-      $isLoading: false,
+    socialNetworkService = createMock<SocialNetworkService>({
+      $isLoading: () => false,
     });
   });
 
@@ -55,20 +56,17 @@ describe('FooterComponent', () => {
   });
 
   describe('when showing the current year', () => {
-    let clock: jasmine.Clock;
-
     beforeEach(() => {
-      clock = jasmine.clock();
-      clock.install();
+      vi.useFakeTimers();
     });
 
     afterEach(() => {
-      clock.uninstall();
+      vi.useRealTimers();
     });
 
     it('should show the current year', async () => {
       const expected = '2022';
-      clock.mockDate(new Date(expected));
+      vi.setSystemTime(new Date(expected));
 
       await render(FooterComponent, {
         providers: [
@@ -89,7 +87,7 @@ describe('FooterComponent', () => {
       { name: 'social-network-3', url: 'url-3', icon: faJs },
     ];
 
-    socialNetworkService.$socialNetworks.and.returnValue(expected as any);
+    socialNetworkService.$socialNetworks.mockReturnValue(expected as any);
 
     await render(FooterComponent, {
       providers: [
@@ -101,7 +99,7 @@ describe('FooterComponent', () => {
       .getAllByTestId('social-network-link')
       .map((element) => within(element).getByRole('link'));
 
-    expect(actual).toHaveSize(expected.length);
+    expect(actual).toHaveLength(expected.length);
     actual.forEach((link, i) => {
       expect(link).toBeVisible();
       expect(link).toHaveAttribute('href', expected.at(i)?.url);
@@ -110,7 +108,7 @@ describe('FooterComponent', () => {
 
   describe('when social networks are loading', () => {
     beforeEach(() => {
-      socialNetworkService.$isLoading.and.returnValue(true);
+      socialNetworkService.$isLoading.mockReturnValue(true);
     });
 
     it('should show a skeleton', async () => {

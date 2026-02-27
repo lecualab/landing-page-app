@@ -23,9 +23,9 @@ describe('EmbeddedRenderComponent', () => {
         },
         {
           provide: SeoService,
-          useValue: jasmine.createSpyObj<SeoService>({
-            updateMetaTags: undefined,
-          }),
+          useValue: {
+            updateMetaTags: vi.fn().mockReturnValue(undefined),
+          },
         },
       ],
     });

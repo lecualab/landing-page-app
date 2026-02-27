@@ -100,24 +100,10 @@
           "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "src/test/config.ts",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "tsconfig.spec.json",
-            "browsers": "ChromeHeadless",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "inlineStyleLanguage": "scss",
-            "styles": [
-              "src/styles.scss",
-              "node_modules/cookieconsent/build/cookieconsent.min.css"
-            ],
-            "scripts": ["node_modules/cookieconsent/build/cookieconsent.min.js"]
+            "setupFiles": ["vitest.setup.ts"],
+            "providersFile": "./src/test/providers.ts"
           }
         },
         "lint": {

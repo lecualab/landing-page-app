@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/angular';
 import { userEvent } from '@testing-library/user-event';
+import type { MockedObject } from 'vitest';
 import { LinkComponent } from './link.component';
 
 describe('LinkComponent', () => {
@@ -34,13 +35,13 @@ describe('LinkComponent', () => {
   }
 
   describe('when clicked', () => {
-    let scrollToSpy: jasmine.SpyObj<Window['scrollTo']>;
+    let scrollToSpy: MockedObject<Window['scrollTo']>;
     let actualScrollTo: Window['scrollTo'];
 
     beforeEach(() => {
       // @ts-expect-error - Testing purposes
       actualScrollTo = document.defaultView?.scrollTo;
-      scrollToSpy = jasmine.createSpy('scrollTo');
+      scrollToSpy = vi.fn();
 
       if (document.defaultView) document.defaultView.scrollTo = scrollToSpy;
     });
@@ -56,7 +57,6 @@ describe('LinkComponent', () => {
 
       await userEvent.click(screen.getByTestId('link'));
 
-      // @ts-expect-error - Overloaded function
       expect(scrollToSpy).toHaveBeenCalledWith({
         top: 0,
         left: 0,

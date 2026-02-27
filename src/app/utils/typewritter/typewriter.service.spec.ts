@@ -1,8 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { TypewriterService } from './typewriter.service';
 
-// TODO: Implement tests
-xdescribe('TypewriterService', () => {
+describe.todo('TypewriterService', () => {
   let service: TypewriterService;
 
   beforeEach(() => {

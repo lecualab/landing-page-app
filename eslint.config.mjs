@@ -3,8 +3,8 @@
 import eslint from '@eslint/js';
 import rxjs from '@smarttools/eslint-plugin-rxjs';
 import stylistic from '@stylistic/eslint-plugin';
+import vitest from '@vitest/eslint-plugin';
 import angular from 'angular-eslint';
-import jasmine from 'eslint-plugin-jasmine';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import sonarjs from 'eslint-plugin-sonarjs';
 import testingLibrary from 'eslint-plugin-testing-library';
@@ -29,7 +29,7 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         projectService: {
-          allowDefaultProject: ['eslint.config.cjs'],
+          allowDefaultProject: ['eslint.config.cjs', 'vitest.setup.ts'],
         },
       },
     },
@@ -62,6 +62,7 @@ export default tseslint.config(
   {
     name: 'SonarJS',
     files: ['**/*.ts'],
+    // @ts-expect-error - SonarJS plugin has no proper types declared
     extends: [sonarjs.configs.recommended],
     rules: {
       'sonarjs/redundant-type-aliases': 'off',
@@ -72,7 +73,6 @@ export default tseslint.config(
   {
     name: 'RxJS',
     files: ['**/*.ts'],
-    // @ts-expect-error - RxJS plugin has no proper types declared
     extends: [rxjs.configs.recommended],
     rules: {
       '@smarttools/rxjs/no-unsafe-takeuntil': [
@@ -120,14 +120,8 @@ export default tseslint.config(
     },
   },
   {
-    name: 'Jasmine',
     files: ['**/*.spec.ts'],
-    plugins: { jasmine },
-    languageOptions: { globals: { ...globals.jasmine } },
-    extends: [jasmine.configs.recommended],
-    rules: {
-      'jasmine/missing-expect': 2,
-    },
+    ...vitest.configs.recommended,
   },
   {
     name: 'Testing Library',

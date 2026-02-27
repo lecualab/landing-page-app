@@ -1,16 +1,18 @@
+import { createMock } from '@golevelup/ts-vitest';
 import { render, screen } from '@testing-library/angular';
 import { NEVER, of } from 'rxjs';
+import type { MockedObject } from 'vitest';
 import { ContactComponent } from './contact.component';
 import { ContactCustomerService } from './data-access/contact-customer';
 
 describe('ContactComponent', () => {
-  let contactCustomerService: jasmine.SpyObj<ContactCustomerService>;
+  let contactCustomerService: MockedObject<ContactCustomerService>;
 
   beforeEach(() => {
-    contactCustomerService = jasmine.createSpyObj<ContactCustomerService>(
-      { $isLoading: false },
-      { success$: NEVER, error$: NEVER },
-    );
+    contactCustomerService = createMock<ContactCustomerService>({
+      success$: NEVER,
+      error$: NEVER,
+    });
   });
 
   it('should show the contact form', async () => {
@@ -27,9 +29,8 @@ describe('ContactComponent', () => {
 
   describe('when the form was submitted successfully', () => {
     beforeEach(() => {
-      contactCustomerService = jasmine.createSpyObj<ContactCustomerService>(
-        { $isLoading: false },
-        { success$: of(undefined), error$: NEVER },
+      vi.spyOn(contactCustomerService, 'success$', 'get').mockReturnValue(
+        of(undefined),
       );
     });
 

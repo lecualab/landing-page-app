@@ -1,15 +1,16 @@
+import { createMock } from '@golevelup/ts-vitest';
 import { render, screen } from '@testing-library/angular';
+import type { MockedObject } from 'vitest';
 import { BusinessUnitsComponent } from './business-units.component';
 import { BusinessUnitService } from './data-access/business-unit';
 import { BusinessUnitDto } from './data-access/business-unit/dtos';
 
 describe('BusinessUnitsComponent', () => {
-  let businessUnitService: jasmine.SpyObj<BusinessUnitService>;
+  let businessUnitService: MockedObject<BusinessUnitService>;
 
   beforeEach(() => {
-    businessUnitService = jasmine.createSpyObj<BusinessUnitService>({
-      $isLoading: false,
-      $businessUnits: [],
+    businessUnitService = createMock<BusinessUnitService>({
+      $isLoading: () => false,
     });
   });
 
@@ -30,7 +31,7 @@ describe('BusinessUnitsComponent', () => {
       { imageUrl: 'image-url-2' } as BusinessUnitDto,
     ];
 
-    businessUnitService.$businessUnits.and.returnValue(expected);
+    businessUnitService.$businessUnits.mockReturnValue(expected);
 
     await render(BusinessUnitsComponent, {
       providers: [
@@ -40,7 +41,7 @@ describe('BusinessUnitsComponent', () => {
 
     const actual = screen.getAllByTestId('business-unit-card');
 
-    expect(actual).toHaveSize(expected.length);
+    expect(actual).toHaveLength(expected.length);
   });
 
   it('should show the commitment', async () => {
@@ -52,8 +53,8 @@ describe('BusinessUnitsComponent', () => {
     expect(actual).toHaveTextContent(/businessUnits.commitment$/);
   });
 
-  // INFO: This test is skipped because I don't know how to include `TailwindCSS` in the test environment.
-  xit('should show the lecualina animation', async () => {
+  // INFO: This test is marked as to-do because I don't know how to include `TailwindCSS` in the test environment.
+  it.todo('should show the lecualina animation', async () => {
     await render(BusinessUnitsComponent);
 
     const actual = screen.getByTestId('lecualina-animation');
@@ -63,7 +64,7 @@ describe('BusinessUnitsComponent', () => {
 
   describe('when business units are loading', () => {
     beforeEach(() => {
-      businessUnitService.$isLoading.and.returnValue(true);
+      businessUnitService.$isLoading.mockReturnValue(true);
     });
 
     it('should show the loader', async () => {

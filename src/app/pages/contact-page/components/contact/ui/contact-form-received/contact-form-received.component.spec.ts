@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactFormReceivedComponent } from './contact-form-received.component';
 
-// TODO: Implement tests
-xdescribe('ContactFormReceivedComponent', () => {
+describe.todo('ContactFormReceivedComponent', () => {
   let component: ContactFormReceivedComponent;
   let fixture: ComponentFixture<ContactFormReceivedComponent>;
 

@@ -1,4 +1,3 @@
-import { fakeAsync, tick } from '@angular/core/testing';
 import { render, screen } from '@testing-library/angular';
 import { LecualinaAnimationComponent } from './lecualina-animation.component';
 
@@ -11,20 +10,28 @@ describe('LecualinaAnimationComponent', () => {
     expect(actual).toBeVisible();
   });
 
-  it('should alternate between lecualina images', fakeAsync(async () => {
-    const AWAITED_TIME = 1_200;
-    const getImageSrc = () => screen.getByRole('img').getAttribute('src');
+  it('should alternate between lecualina images', async () => {
+    const getImageSrcAfterAdvanceTimers = async () => {
+      const AWAITED_TIME = 1200;
+
+      vi.advanceTimersByTime(AWAITED_TIME);
+      await vi.runOnlyPendingTimersAsync();
+
+      return screen.getByRole('img').getAttribute('src');
+    };
+
+    vi.useFakeTimers();
 
     await render(LecualinaAnimationComponent);
 
     // INFO: Validate that the image changes every X seconds
-    Array.from({ length: 5 }).forEach(() => {
-      tick(AWAITED_TIME);
-      const base = getImageSrc();
-      tick(AWAITED_TIME);
-      const actual = getImageSrc();
+    for (let i = 0; i < 5; i++) {
+      const base = await getImageSrcAfterAdvanceTimers();
+      const actual = await getImageSrcAfterAdvanceTimers();
 
       expect(actual).not.toEqual(base);
-    });
-  }));
+    }
+
+    vi.useRealTimers();
+  });
 });
